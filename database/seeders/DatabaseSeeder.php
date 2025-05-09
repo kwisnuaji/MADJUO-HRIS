@@ -13,13 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call([
-            UserSeeder::class,
-            PowerUpSeeder::class,
-            
-            // Seeder lainnya...
+        // User::factory(10)->create();
+
+        User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
         ]);
-        $this->call(\App\Modules\Madjuo360\Database\Seeders\StarterPlanAndModuleSeeder::class);
-        $this->call(\App\Modules\Madjuo360\Database\Seeders\AssignStarterPlanToCompaniesSeeder::class);
     }
 }
